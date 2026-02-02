@@ -66,14 +66,14 @@ class _PlateCalculatorHomeState extends State<PlateCalculatorHome> {
   late Bar _currentBar;
 
   List<Plate> _inventory = [
-    Plate(weight: 55, amount: 4, color: const Color(0xFFE53935)),
-    Plate(weight: 45, amount: 12, color: const Color(0xFF1E88E5)),
-    Plate(weight: 35, amount: 4, color: const Color(0xFFFFEB3B)),
-    Plate(weight: 25, amount: 4, color: const Color(0xFF43A047)),
-    Plate(weight: 10, amount: 6, color: Colors.white),
-    Plate(weight: 5, amount: 6, color: Colors.grey),
-    Plate(weight: 2.5, amount: 4, color: const Color(0xFFB0BEC5)),
-    Plate(weight: 1, amount: 4, color: Colors.amber),
+    Plate(weight: 55, amount: 10, color: const Color(0xFFE53935)),
+    Plate(weight: 45, amount: 10, color: const Color(0xFF1E88E5)),
+    Plate(weight: 35, amount: 10, color: const Color(0xFFFFEB3B)),
+    Plate(weight: 25, amount: 10, color: const Color(0xFF43A047)),
+    Plate(weight: 10, amount: 10, color: Colors.white),
+    Plate(weight: 5, amount: 10, color: Colors.grey),
+    Plate(weight: 2.5, amount: 10, color: const Color(0xFFB0BEC5)),
+    Plate(weight: 1, amount: 10, color: Colors.amber),
   ];
 
   CalculationResult? _result;
@@ -175,14 +175,14 @@ class _PlateCalculatorHomeState extends State<PlateCalculatorHome> {
       
       if (_isKg) {
         _inventory = [
-          Plate(weight: 25, amount: 4, color: const Color(0xFFE53935)),
-          Plate(weight: 20, amount: 12, color: const Color(0xFF1E88E5)),
-          Plate(weight: 15, amount: 4, color: const Color(0xFFFFEB3B)),
-          Plate(weight: 10, amount: 4, color: const Color(0xFF43A047)),
-          Plate(weight: 5, amount: 6, color: Colors.white),
-          Plate(weight: 2.5, amount: 6, color: Colors.grey),
-          Plate(weight: 1.25, amount: 4, color: const Color(0xFFB0BEC5)),
-          Plate(weight: 0.5, amount: 4, color: Colors.amber),
+          Plate(weight: 25, amount: 10, color: const Color(0xFFE53935)),
+          Plate(weight: 20, amount: 10, color: const Color(0xFF1E88E5)),
+          Plate(weight: 15, amount: 10, color: const Color(0xFFFFEB3B)),
+          Plate(weight: 10, amount: 10, color: const Color(0xFF43A047)),
+          Plate(weight: 5, amount: 10, color: Colors.white),
+          Plate(weight: 2.5, amount: 10, color: Colors.grey),
+          Plate(weight: 1.25, amount: 10, color: const Color(0xFFB0BEC5)),
+          Plate(weight: 0.5, amount: 10, color: Colors.amber),
         ];
         _bars = [
           Bar(name: 'Standard Bar', weight: 20.0),
@@ -194,14 +194,14 @@ class _PlateCalculatorHomeState extends State<PlateCalculatorHome> {
         ];
       } else {
         _inventory = [
-          Plate(weight: 55, amount: 4, color: const Color(0xFFE53935)),
-          Plate(weight: 45, amount: 12, color: const Color(0xFF1E88E5)),
-          Plate(weight: 35, amount: 4, color: const Color(0xFFFFEB3B)),
-          Plate(weight: 25, amount: 4, color: const Color(0xFF43A047)),
-          Plate(weight: 10, amount: 6, color: Colors.white),
-          Plate(weight: 5, amount: 6, color: Colors.grey),
-          Plate(weight: 2.5, amount: 4, color: const Color(0xFFB0BEC5)),
-          Plate(weight: 1, amount: 4, color: Colors.amber),
+          Plate(weight: 55, amount: 10, color: const Color(0xFFE53935)),
+          Plate(weight: 45, amount: 10, color: const Color(0xFF1E88E5)),
+          Plate(weight: 35, amount: 10, color: const Color(0xFFFFEB3B)),
+          Plate(weight: 25, amount: 10, color: const Color(0xFF43A047)),
+          Plate(weight: 10, amount: 10, color: Colors.white),
+          Plate(weight: 5, amount: 10, color: Colors.grey),
+          Plate(weight: 2.5, amount: 10, color: const Color(0xFFB0BEC5)),
+          Plate(weight: 1, amount: 10, color: Colors.amber),
         ];
         _bars = [
           Bar(name: 'Standard Bar', weight: 45.0),
@@ -242,10 +242,7 @@ class _PlateCalculatorHomeState extends State<PlateCalculatorHome> {
                   const SizedBox(height: 12),
                   Container(width: 40, height: 4, decoration: BoxDecoration(color: Colors.white24, borderRadius: BorderRadius.circular(2))),
                   const TabBar(
-                    tabs: [
-                      Tab(text: 'BARS'),
-                      Tab(text: 'PLATES'),
-                    ],
+                    tabs: [Tab(text: 'BARS'), Tab(text: 'PLATES')],
                     indicatorColor: Color(0xFFE53935),
                     labelColor: Color(0xFFE53935),
                     unselectedLabelColor: Colors.grey,
@@ -262,24 +259,9 @@ class _PlateCalculatorHomeState extends State<PlateCalculatorHome> {
                             final bar = _bars[index];
                             final isSelected = _currentBar.name == bar.name;
                             return ListTile(
-                              leading: Icon(
-                                Icons.fitness_center, 
-                                size: 20, 
-                                color: isSelected ? const Color(0xFFE53935) : Colors.grey,
-                              ),
-                              title: Text(
-                                bar.name,
-                                style: TextStyle(
-                                  color: isSelected ? const Color(0xFFE53935) : Colors.white,
-                                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                                ),
-                              ),
-                              subtitle: Text(
-                                '${bar.weight} ${_isKg ? 'kg' : 'lb'}',
-                                style: TextStyle(
-                                  color: isSelected ? const Color(0xFFE53935).withValues(alpha: 0.7) : Colors.grey,
-                                ),
-                              ),
+                              leading: Icon(Icons.fitness_center, size: 20, color: isSelected ? const Color(0xFFE53935) : Colors.grey),
+                              title: Text(bar.name, style: TextStyle(color: isSelected ? const Color(0xFFE53935) : Colors.white, fontWeight: isSelected ? FontWeight.bold : FontWeight.normal)),
+                              subtitle: Text('${bar.weight} ${_isKg ? 'kg' : 'lb'}', style: TextStyle(color: isSelected ? const Color(0xFFE53935).withValues(alpha: 0.7) : Colors.grey)),
                               onTap: () {
                                 setState(() => _currentBar = bar);
                                 _calculate();
@@ -296,35 +278,39 @@ class _PlateCalculatorHomeState extends State<PlateCalculatorHome> {
                           itemCount: _inventory.length,
                           itemBuilder: (context, index) {
                             final plate = _inventory[index];
+                            final controller = TextEditingController(text: plate.amount.toString());
                             return ListTile(
                               leading: CircleAvatar(backgroundColor: plate.color, radius: 12),
-                              title: Text(
-                                '${plate.weight} ${_isKg ? 'kg' : 'lb'}',
-                                style: const TextStyle(fontWeight: FontWeight.bold),
-                              ),
+                              title: Text('${plate.weight} ${_isKg ? 'kg' : 'lb'}', style: const TextStyle(fontWeight: FontWeight.bold)),
                               trailing: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  IconButton(
-                                    icon: const Icon(Icons.remove), 
-                                    onPressed: () {
-                                      setModalState(() { if (plate.amount > 0) plate.amount--; });
-                                      setState(() => _calculate());
-                                      _saveData();
-                                    },
+                                  IconButton(icon: const Icon(Icons.remove), onPressed: () {
+                                    setModalState(() { if (plate.amount > 0) plate.amount--; });
+                                    setState(() => _calculate());
+                                    _saveData();
+                                  }),
+                                  SizedBox(
+                                    width: 40,
+                                    child: TextField(
+                                      controller: controller,
+                                      textAlign: TextAlign.center,
+                                      keyboardType: TextInputType.number,
+                                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                                      decoration: const InputDecoration(border: InputBorder.none, isDense: true),
+                                      onChanged: (val) {
+                                        final newAmount = int.tryParse(val) ?? 0;
+                                        setModalState(() => plate.amount = newAmount);
+                                        setState(() => _calculate());
+                                        _saveData();
+                                      },
+                                    ),
                                   ),
-                                  Text(
-                                    '${plate.amount}', 
-                                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                                  ),
-                                  IconButton(
-                                    icon: const Icon(Icons.add), 
-                                    onPressed: () {
-                                      setModalState(() { plate.amount++; });
-                                      setState(() => _calculate());
-                                      _saveData();
-                                    },
-                                  ),
+                                  IconButton(icon: const Icon(Icons.add), onPressed: () {
+                                    setModalState(() { plate.amount++; });
+                                    setState(() => _calculate());
+                                    _saveData();
+                                  }),
                                 ],
                               ),
                             );
@@ -368,10 +354,7 @@ class _PlateCalculatorHomeState extends State<PlateCalculatorHome> {
                           decoration: BoxDecoration(color: const Color(0xFF1E1E1E), borderRadius: BorderRadius.circular(20)),
                           child: FittedBox(
                             fit: BoxFit.scaleDown,
-                            child: Text(
-                              _isKg ? 'METRIC (KG)' : 'IMPERIAL (LB)', 
-                              style: const TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFE53935)),
-                            ),
+                            child: Text(_isKg ? 'METRIC (KG)' : 'IMPERIAL (LB)', style: const TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFE53935))),
                           ),
                         ),
                       ),
@@ -449,32 +432,16 @@ class _PlateCalculatorHomeState extends State<PlateCalculatorHome> {
                     borderRadius: BorderRadius.circular(10),
                     border: _result!.isOverloaded ? Border.all(color: Colors.red, width: 2) : null,
                   ),
-                  child: Text(
-                    _result!.message, 
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: _result!.isOverloaded ? Colors.red : const Color(0xFFE53935), fontWeight: FontWeight.bold)
-                  ),
+                  child: Text(_result!.message, textAlign: TextAlign.center, style: TextStyle(color: _result!.isOverloaded ? Colors.red : const Color(0xFFE53935), fontWeight: FontWeight.bold)),
                 ),
               const Spacer(),
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
                 child: Row(
                   children: [
-                    Expanded(
-                      child: _actionButton(
-                        Icons.fitness_center, 
-                        'BAR: ${_currentBar.weight.toStringAsFixed(1).replaceAll('.0', '')}', 
-                        _cycleBar
-                      ),
-                    ),
+                    Expanded(child: _actionButton(Icons.fitness_center, 'BAR: ${_currentBar.weight.toStringAsFixed(1).replaceAll('.0', '')}', _cycleBar)),
                     const SizedBox(width: 12),
-                    Expanded(
-                      child: _actionButton(
-                        _showVisualBar ? Icons.list : Icons.image, 
-                        _showVisualBar ? 'TEXT' : 'VISUAL', 
-                        () => setState(() => _showVisualBar = !_showVisualBar)
-                      ),
-                    ),
+                    Expanded(child: _actionButton(_showVisualBar ? Icons.list : Icons.image, _showVisualBar ? 'TEXT' : 'VISUAL', () => setState(() => _showVisualBar = !_showVisualBar))),
                   ],
                 ),
               ),
@@ -489,9 +456,7 @@ class _PlateCalculatorHomeState extends State<PlateCalculatorHome> {
     return GestureDetector(
       onTapDown: (_) {
         _adjustWeight(delta);
-        _adjustmentTimer = Timer.periodic(const Duration(milliseconds: 150), (timer) {
-          _adjustWeight(delta);
-        });
+        _adjustmentTimer = Timer.periodic(const Duration(milliseconds: 150), (timer) { _adjustWeight(delta); });
       },
       onTapUp: (_) => _adjustmentTimer?.cancel(),
       onTapCancel: () => _adjustmentTimer?.cancel(),
