@@ -6,14 +6,14 @@
     "weight": 45.0
   },
   "inventory": [
-    { "weight": 55.0, "amount": 4, "color": 4293228853 },
-    { "weight": 45.0, "amount": 12, "color": 4280158437 },
-    { "weight": 35.0, "amount": 4, "color": 4294962491 },
-    { "weight": 25.0, "amount": 4, "color": 4282613831 },
-    { "weight": 10.0, "amount": 6, "color": 4294967295 },
-    { "weight": 5.0, "amount": 6, "color": 4288256409 },
-    { "weight": 2.5, "amount": 4, "color": 4289773253 },
-    { "weight": 1.0, "amount": 4, "color": 4294956800 }
+    { "weight": 55.0, "amount": 10, "color": 4293228853 },
+    { "weight": 45.0, "amount": 10, "color": 4280158437 },
+    { "weight": 35.0, "amount": 10, "color": 4294962491 },
+    { "weight": 25.0, "amount": 10, "color": 4282613831 },
+    { "weight": 10.0, "amount": 10, "color": 4294967295 },
+    { "weight": 5.0, "amount": 10, "color": 4288256409 },
+    { "weight": 2.5, "amount": 10, "color": 4289773253 },
+    { "weight": 1.0, "amount": 10, "color": 4294956800 }
   ],
   "lastCalculation": {
     "neededPlates": [0, 2, 0, 0, 0, 0, 0, 0],
